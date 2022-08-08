@@ -8,6 +8,8 @@ public class TicTacToe {
 	static int playerChoiceForXand0;
 	static int computerChoiceForXand0;
 	static int playerChoiceForToss;
+	static int cPosition0 ;
+	static int cPositionX ;
 
 	public static void tossBetweenPlayerAndComputer() {
 		System.out.println("lets to do Toss");
@@ -58,6 +60,58 @@ public class TicTacToe {
 		System.out.println("-------------");
 	}
 	
+	public static void checkPlayerWinSituation(){
+		if(gameBoard[1] + gameBoard[2].equals("XX")) {if(gameBoard[3]==" "){cPosition0 =3;}}
+		if(gameBoard[1] + gameBoard[3].equals("XX")) {if(gameBoard[2]==" "){cPosition0 =2;}}
+        if(gameBoard[2] + gameBoard[3].equals("XX")) {if(gameBoard[1]==" "){cPosition0=1;}}
+		if(gameBoard[1] + gameBoard[2].equals("00")) {if(gameBoard[3]==" "){cPositionX =3;}}
+		if(gameBoard[1] + gameBoard[3].equals("00")) {if(gameBoard[2]==" "){cPositionX =2;}}
+        if(gameBoard[2] + gameBoard[3] .equals("00")) {if(gameBoard[1]==" "){cPositionX =1;}}
+		if(gameBoard[4] + gameBoard[5].equals("XX")) {if(gameBoard[6]==" "){cPosition0=6;}}
+		if(gameBoard[5] + gameBoard[6].equals("XX")) {if(gameBoard[5]==" "){cPosition0=4;}}
+		if(gameBoard[4] + gameBoard[6].equals("XX")) {if(gameBoard[5]==" "){cPosition0=5;}}
+		if(gameBoard[5] + gameBoard[6] .equals("00")) {if(gameBoard[4]==" "){cPositionX =4;}}
+        if(gameBoard[4] + gameBoard[6] .equals("00")) {if(gameBoard[5]==" "){cPositionX =5;}}
+		if(gameBoard[4] + gameBoard[5] .equals("00")) {if(gameBoard[6]==" "){cPositionX =6;}}
+		if(gameBoard[4] + gameBoard[5].equals("XX")) {if(gameBoard[6]==" "){cPosition0 =6;}}
+		if(gameBoard[5] + gameBoard[6] .equals("XX")) {if(gameBoard[5]==" "){cPosition0 =5;}}
+		if(gameBoard[4] + gameBoard[5] .equals("XX")) {if(gameBoard[6]==" "){cPosition0 =6;}}
+		if(gameBoard[5] + gameBoard[6] .equals("00")) {if(gameBoard[4]==" "){cPositionX =4;}}
+		if(gameBoard[4] + gameBoard[6] .equals("00")) {if(gameBoard[5]==" "){cPositionX =5;}}
+		if(gameBoard[4] + gameBoard[5].equals("00")) {if(gameBoard[6]==" "){cPositionX =6;}}
+		if(gameBoard[1] + gameBoard[4] .equals("XX")) {if(gameBoard[7]==" "){cPosition0 =7;}}
+		if(gameBoard[1] + gameBoard[7] .equals("XX")) {if(gameBoard[1]==" "){cPosition0 =4;}}
+		if(gameBoard[7] + gameBoard[4] .equals("XX")) {if(gameBoard[7]==" "){cPosition0 =1;}}
+		if(gameBoard[4] + gameBoard[1] .equals("00")) {if(gameBoard[4]==" "){cPositionX =7;}}
+		if(gameBoard[1] + gameBoard[7] .equals("00")) {if(gameBoard[4]==" "){cPositionX =4;}}
+		if(gameBoard[4] + gameBoard[7] .equals("00")) {if(gameBoard[1]==" "){cPositionX =1;}}
+		if(gameBoard[2] + gameBoard[5]  .equals("XX")) {if(gameBoard[8]==" "){cPosition0 =8;}}
+		if(gameBoard[5] + gameBoard[8] .equals("XX")) {if(gameBoard[2]==" "){cPosition0 =2;}}
+		if(gameBoard[2] + gameBoard[8] .equals("XX")) {if(gameBoard[5]==" "){cPosition0 =5;}}
+		if(gameBoard[2] + gameBoard[5]  .equals("00")) {if(gameBoard[8]==" "){cPositionX =8;}}
+		if(gameBoard[5] + gameBoard[8] .equals("00")) {if(gameBoard[2]==" "){cPositionX =2;}}
+		if(gameBoard[2] + gameBoard[8] .equals("00")) {if(gameBoard[5]==" "){cPositionX =5;}}
+		if(gameBoard[3] + gameBoard[6] .equals("XX")) {if(gameBoard[9]==" "){cPosition0 =9;}}
+		if(gameBoard[6] + gameBoard[9] .equals("XX")) {if(gameBoard[3]==" "){cPosition0 =3;}}
+		if(gameBoard[3] + gameBoard[9] .equals("XX")) {if(gameBoard[6]==" "){cPosition0 =6;}}
+		if(gameBoard[3] + gameBoard[6] .equals("00")) {if(gameBoard[9]==" "){cPositionX =9;}}
+		if(gameBoard[6] + gameBoard[9] .equals("00")) {if(gameBoard[3]==" "){cPositionX =3;}}
+		if(gameBoard[3] + gameBoard[9] .equals("00")) {if(gameBoard[6]==" "){cPositionX =6;}}
+		if(gameBoard[1] + gameBoard[5] .equals("XX")) {if(gameBoard[9]==" "){cPosition0 =9;}}
+		if(gameBoard[1] + gameBoard[9] .equals("XX")) {if(gameBoard[5]==" "){cPosition0 =5;}}
+		if(gameBoard[5] + gameBoard[9] .equals("XX")) {if(gameBoard[1]==" "){cPosition0 =1;}}
+		if(gameBoard[1] + gameBoard[5] .equals("00")) {if(gameBoard[9]==" "){cPositionX =9;}}
+		if(gameBoard[1] + gameBoard[9] .equals("00")) {if(gameBoard[5]==" "){cPositionX= 5;}}
+		if(gameBoard[5] + gameBoard[9] .equals("00")) {if(gameBoard[1]==" "){cPositionX =1;}}
+		if(gameBoard[3] + gameBoard[5] .equals("XX")) {if(gameBoard[7]==" "){cPosition0 =7;}}
+		if(gameBoard[3] + gameBoard[7] .equals("XX")) {if(gameBoard[5]==" "){cPosition0 =5;}}
+		if(gameBoard[5] + gameBoard[7] .equals("XX")) {if(gameBoard[3]==" "){cPosition0 =3;}}
+		if(gameBoard[3] + gameBoard[5] .equals("00")) {if(gameBoard[7]==" "){cPositionX =7;}}
+		if(gameBoard[3] + gameBoard[7] .equals("00")) {if(gameBoard[5]==" "){cPositionX =5;}}
+		if(gameBoard[5] + gameBoard[7] .equals("00")) {if(gameBoard[3]==" "){cPositionX =3;}}
+                     
+	}
+
 	public static void checkWinSituation(){
         for (int a = 0; a < 8; a++) {
             String line = null;
@@ -73,10 +127,10 @@ public class TicTacToe {
                 line = gameBoard[7] + gameBoard[8] + gameBoard[9];
                 break;
             case 3:
-                line = gameBoard[1] + gameBoard[2] + gameBoard[3];
+                line = gameBoard[1] + gameBoard[4] + gameBoard[7];
                 break;
             case 4:
-                line = gameBoard[4] + gameBoard[5] + gameBoard[6];
+                line = gameBoard[2] + gameBoard[5] + gameBoard[8];
                 break;
             case 5:
                 line = gameBoard[3] + gameBoard[6] + gameBoard[9];
@@ -91,15 +145,14 @@ public class TicTacToe {
             //For X winner
             if (line.equals("XXX")) {
             	if(playerChoiceForXand0==1) { //players has choosen X
-    				System.out.println("You won the Game");
+    				System.out.println("You won the game");
     			}
             	else {
-            		System.out.println("You have Lost the game");
+            		System.out.println("You have lost the game");
             	}
-            System.exit(0);	
+            System.exit(0);
             }
-            // For O winner
-            if(line.equals("000")) {
+            if(line.equals("OOO")) {
             	if(playerChoiceForXand0==1) { //players has choosen X
     				System.out.println("You have Lost the Game");
     			}
@@ -118,7 +171,7 @@ public class TicTacToe {
 			}
 		}
 		if(numberOfBoxFilled==9) {
-			System.out.println("GameOver");
+			System.out.println("Game has been Tied");
 			System.exit(0);
 		}
 	} 
@@ -153,7 +206,7 @@ public class TicTacToe {
 					playFromPlayerSide();
 					break;
 				}
-				addXand0inBox("0",position0);
+				addXand0inBox("O",position0);
 				break;
 		}
 	}
@@ -164,24 +217,26 @@ public class TicTacToe {
 		Scanner sc = new Scanner(System.in);
 		switch(computerChoiceForXand0) {			
 			case 1:
-				int positionX =(int)(Math.random()*10 %9 +1);
-				if(gameBoard[positionX]!=" ") {
+				cPositionX  =(int)(Math.random()*10 %9 +1);
+				if(gameBoard[cPositionX ]!=" ") {
 					//System.out.println("Space not empty please enter vaild position");
 					playFromComputerSide();
 					break;
 				}
 				System.out.println("Computer Turn's");
-				addXand0inBox("X",positionX);				
+				checkPlayerWinSituation();
+				addXand0inBox("X",cPositionX );				
 				break;
 			case 0:
-				int position0 =(int)(Math.random()*10 %9 +1);
-				if(gameBoard[position0]!=" ") {
+				cPosition0  =(int)(Math.random()*10 %9 +1);
+				if(gameBoard[cPosition0 ]!=" ") {
 					//System.out.println("Space not empty please enter vaild position");
 					playFromComputerSide();
 					break;
 				}
 				System.out.println("Computer Turn's");
-				addXand0inBox("0",position0);
+				checkPlayerWinSituation();
+				addXand0inBox("O",cPosition0 );
 				break;
 		}
 	}
