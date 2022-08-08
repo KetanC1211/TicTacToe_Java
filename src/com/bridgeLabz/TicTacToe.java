@@ -2,7 +2,7 @@ package com.bridgeLabz;
 import java.util.Scanner;
 
 public class TicTacToe {
-	public static char gameBoard [] = new char[10]; 
+	public static String gameBoard [] = new String[10]; 
 	static int tossToDecideWhoStartsFirst = (int)(Math.random()*10 %2);
 	static int tossResultForComputer;
 	static int playerChoiceForXand0;
@@ -43,7 +43,7 @@ public class TicTacToe {
 		
 	}
 	
-	public static void displayBoard(char gameBoard[]) {
+	public static void displayBoard(String gameBoard[]) {
 		for(int i=1;i<10;i++) {
 			if(i==1) {
 				System.out.println("-------------");
@@ -57,11 +57,63 @@ public class TicTacToe {
 		System.out.println("|");
 		System.out.println("-------------");
 	}
-
+	
+	public static void checkWinSituation(){
+        for (int a = 0; a < 8; a++) {
+            String line = null;
+  
+            switch (a) {
+            case 0:
+                line = gameBoard[1] + gameBoard[2] + gameBoard[3];
+                break;
+            case 1:
+                line = gameBoard[4] + gameBoard[5] + gameBoard[6];
+                break;
+            case 2:
+                line = gameBoard[7] + gameBoard[8] + gameBoard[9];
+                break;
+            case 3:
+                line = gameBoard[1] + gameBoard[2] + gameBoard[3];
+                break;
+            case 4:
+                line = gameBoard[4] + gameBoard[5] + gameBoard[6];
+                break;
+            case 5:
+                line = gameBoard[3] + gameBoard[6] + gameBoard[9];
+                break;
+            case 6:
+                line = gameBoard[1] + gameBoard[5] + gameBoard[9];
+                break;
+            case 7:
+                line = gameBoard[3] +gameBoard[5] + gameBoard[7];
+                break;
+            }
+            //For X winner
+            if (line.equals("XXX")) {
+            	if(playerChoiceForXand0==1) { //players has choosen X
+    				System.out.println("You won the Game");
+    			}
+            	else {
+            		System.out.println("You have Lost the game");
+            	}
+            System.exit(0);	
+            }
+            // For O winner
+            if(line.equals("000")) {
+            	if(playerChoiceForXand0==1) { //players has choosen X
+    				System.out.println("You have Lost the Game");
+    			}
+            	else {
+            		System.out.println("You won the game");
+            	}
+            System.exit(0);
+            }         
+        }  
+	}
 	public static void allBoxFilledthenEndTheGame() {
 		int numberOfBoxFilled=0;
 		for(int i =1;i<10;i++) {
-			if(gameBoard[i]!=' ') {
+			if(gameBoard[i]!=" ") {
 				numberOfBoxFilled++;
 			}
 		}
@@ -71,7 +123,7 @@ public class TicTacToe {
 		}
 	} 
 
-	public static void addXand0inBox(char enteredVal, int position) {
+	public static void addXand0inBox(String enteredVal, int position) {
 		gameBoard[position] = enteredVal;
 		displayBoard(gameBoard);
 	}
@@ -79,54 +131,57 @@ public class TicTacToe {
 
 
 	public static void playFromPlayerSide() {
+		checkWinSituation();
 		allBoxFilledthenEndTheGame() ;
 		Scanner sc = new Scanner(System.in);
 		switch(playerChoiceForXand0) {//if he gets 1 he will go with X or 0
 			case 1:
 				System.out.println("Enter Player position to place X");
 				int positionX = sc.nextInt();
-				if(gameBoard[positionX]!=' ') {
+				if(gameBoard[positionX]!=" ") {
 					System.out.println("Space not empty please enter vaild position");
 					playFromPlayerSide();
 					break;
 				}
-				addXand0inBox('X',positionX);				
+				addXand0inBox("X",positionX);				
 				break;
 			case 0:
 				System.out.println("Enter Player position to place 0");
 				int position0 = sc.nextInt();
-				if(gameBoard[position0]!=' ') {
+				if(gameBoard[position0]!=" ") {
 					System.out.println("Space not empty please enter vaild position");
 					playFromPlayerSide();
 					break;
 				}
-				addXand0inBox('0',position0);
+				addXand0inBox("0",position0);
 				break;
 		}
 	}
 
 	public static void playFromComputerSide() {
+		checkWinSituation();
 		allBoxFilledthenEndTheGame() ;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Computer Turn's");
 		switch(computerChoiceForXand0) {			
 			case 1:
 				int positionX =(int)(Math.random()*10 %9 +1);
-				if(gameBoard[positionX]!=' ') {
-					System.out.println("Space not empty please enter vaild position");
+				if(gameBoard[positionX]!=" ") {
+					//System.out.println("Space not empty please enter vaild position");
 					playFromComputerSide();
 					break;
 				}
-				addXand0inBox('X',positionX);				
+				System.out.println("Computer Turn's");
+				addXand0inBox("X",positionX);				
 				break;
 			case 0:
 				int position0 =(int)(Math.random()*10 %9 +1);
-				if(gameBoard[position0]!=' ') {
-					System.out.println("Space not empty please enter vaild position");
+				if(gameBoard[position0]!=" ") {
+					//System.out.println("Space not empty please enter vaild position");
 					playFromComputerSide();
 					break;
 				}
-				addXand0inBox('0',position0);
+				System.out.println("Computer Turn's");
+				addXand0inBox("0",position0);
 				break;
 		}
 	}
@@ -152,7 +207,7 @@ public class TicTacToe {
 	public static void main(String[] args) {	
 		System.out.println("Welcomw to Tic-Tac-Toe");
 		for(int i=0;i<10;i++) {
-			gameBoard [i] = ' ' ;
+			gameBoard [i] = " ";
 		}
 		displayBoard(gameBoard);
 		tossBetweenPlayerAndComputer();		
