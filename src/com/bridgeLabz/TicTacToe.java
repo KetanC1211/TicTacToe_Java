@@ -58,12 +58,28 @@ public class TicTacToe {
 		System.out.println("-------------");
 	}
 
+	public static void allBoxFilledthenEndTheGame() {
+		int numberOfBoxFilled=0;
+		for(int i =1;i<10;i++) {
+			if(gameBoard[i]!=' ') {
+				numberOfBoxFilled++;
+			}
+		}
+		if(numberOfBoxFilled==9) {
+			System.out.println("GameOver");
+			System.exit(0);
+		}
+	} 
+
 	public static void addXand0inBox(char enteredVal, int position) {
 		gameBoard[position] = enteredVal;
 		displayBoard(gameBoard);
 	}
 
+
+
 	public static void playFromPlayerSide() {
+		allBoxFilledthenEndTheGame() ;
 		Scanner sc = new Scanner(System.in);
 		switch(playerChoiceForXand0) {//if he gets 1 he will go with X or 0
 			case 1:
@@ -90,6 +106,7 @@ public class TicTacToe {
 	}
 
 	public static void playFromComputerSide() {
+		allBoxFilledthenEndTheGame() ;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Computer Turn's");
 		switch(computerChoiceForXand0) {			
